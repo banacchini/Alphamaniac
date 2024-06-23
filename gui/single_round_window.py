@@ -6,20 +6,19 @@ from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QDialog, QApplication, QStackedWidget, QLCDNumber
 from PyQt5.QtCore import QTimer
 from game.game_logic import GameLogic
+from constants import MAX_SINGLE_ROUND_TIME, LETTERS
 
 # Suppress DeprecationWarning
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-# Define the maximum single round time in seconds
-MAX_SINGLE_ROUND_TIME = 60  # Example: 60 seconds
 
 
 class singleRoundScreen(QDialog):
-    def __init__(self, random_letter):
+    def __init__(self):
         super(singleRoundScreen, self).__init__()
         loadUi("singleRoundDialog.ui", self)
 
-        self.random_letter = random_letter
+        self.random_letter = rchoice(LETTERS)
         self.time_left = MAX_SINGLE_ROUND_TIME
 
         self.currentLetterDisplay.setText(self.random_letter)

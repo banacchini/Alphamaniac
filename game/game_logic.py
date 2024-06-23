@@ -1,6 +1,6 @@
 import random
 import string
-from data.data_handler import DataHandler
+from game.data_handler import DataHandler
 
 class GameLogic:
     def __init__(self):

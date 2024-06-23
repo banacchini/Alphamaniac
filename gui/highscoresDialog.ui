@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>menuUI</class>
+ <widget class="QDialog" name="menuUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="background" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#background{
+background-color:qlineargradient(spread:pad, x1:0, y1:0.0227273, x2:0.95003, y2:0.972, stop:0 rgba(221, 165, 255, 255), stop:0.800995 rgba(255, 198, 159, 255));}</string>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>225</x>
+      <y>50</y>
+      <width>750</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 70pt &quot;Bauhaus 93&quot;;
+
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Alphamaniac</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="subtitle">
+    <property name="geometry">
+     <rect>
+      <x>345</x>
+      <y>190</y>
+      <width>510</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Showcard Gothic&quot;;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>CHECK YOUR HIGHSCORES!</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="srButton">
+    <property name="geometry">
+     <rect>
+      <x>385</x>
+      <y>375</y>
+      <width>430</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bauhaus 93</family>
+      <pointsize>16</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:30px;
+background-color: rgb(241, 241, 241);
+font: 16pt &quot;Bauhaus 93&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Single Round</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="taButton">
+    <property name="geometry">
+     <rect>
+      <x>385</x>
+      <y>500</y>
+      <width>430</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Bauhaus 93</family>
+      <pointsize>16</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:30px;
+background-color: rgb(241, 241, 241);
+font: 16pt &quot;Bauhaus 93&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Time Attack</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

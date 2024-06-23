@@ -13,14 +13,22 @@ class menuScreen(QDialog):
         super(menuScreen, self).__init__()
         loadUi("menuDialog.ui", self)
         self.srButton.clicked.connect(self.goToSingleRound)
+        self.hsButton.clicked.connect(self.goToHighscores)
 
     def goToSingleRound(self):
         #due to circular imports
         from single_round_window import singleRoundScreen
 
-        srScreen = singleRoundScreen(randchoice(string.ascii_uppercase))
+        srScreen = singleRoundScreen()
         widget.addWidget(srScreen)
         widget.setCurrentIndex(widget.currentIndex()+1)
+
+    def goToHighscores(self):
+        from highscore_window import highscoreScreen
+        hsScreen = highscoreScreen()
+        widget.addWidget(hsScreen)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+
 
 
 

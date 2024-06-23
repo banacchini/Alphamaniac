@@ -1,9 +1,7 @@
-import os
-import json
 from PyQt5.uic import loadUi
-from PyQt5.QtWidgets import QDialog, QApplication, QStackedWidget, QLCDNumber
-from PyQt5.QtCore import QTimer
-from data.data_handler import DataHandler
+from PyQt5.QtWidgets import QDialog
+from game.data_handler import DataHandler
+from constants import MAX_SINGLE_ROUND_TIME
 # from menu_window import menuScreen
 
 class singleRoundResults(QDialog):
@@ -14,10 +12,15 @@ class singleRoundResults(QDialog):
         self.random_letter = letter
         self.time_left = time_left
 
+
         self.timer.display(time_left)
         self.currentLetterDisplay.setText(self.random_letter)
 
         self.setAnswers(answers)
+
+        self.DH = DataHandler()
+
+        self.DH.add_single_round_highscore(self.random_letter, self.countCorrect(answers), MAX_SINGLE_ROUND_TIME-self.time_left)
 
         self.okButton.clicked.connect(self.goToMenu)
 
@@ -39,6 +42,12 @@ class singleRoundResults(QDialog):
         self.setEditLineTextAndColor(self.animalInput, answers['animals'])
         self.setEditLineTextAndColor(self.sportInput, answers['sports'])
 
+    def countCorrect(self, answers):
+        correct = 0
+        for category in answers.keys():
+            correct += answers[category][1]
+        return correct
+
     def setEditLineTextAndColor(self, editLine, answer):
         #example usage: setEditLineTextAndColor(self.cityInput, [London, True])
         #answer = [answer_text, bool_answer]
@@ -50,18 +59,10 @@ class singleRoundResults(QDialog):
             editLine.setStyleSheet('font: 75 20pt "Gill Sans MT";color: rgb(255, 0, 0);')
 
     def addToDictionary(self, text, category):
-        self.data_handler.add_to_dictionary(text, category)
+        self.DH.add_to_dictionary(text, category)
     #
     def goToMenu(self):
         widget = self.parent()
         widget.removeWidget(self)
         widget.setCurrentIndex(0)
 
-    def clearWidgets(self):
-        stackWidget = self.parentWidget()
-        ind = stackWidget.count()
-        while ind < 0:
-            delWidget = stackWidget.widget(ind)
-            stackWidget.removeWidget(delWidget)
-            delWidget.delete()
-            ind -= 1

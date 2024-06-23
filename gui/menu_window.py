@@ -4,6 +4,7 @@ import warnings
 from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QDialog, QApplication, QStackedWidget
 from random import choice as randchoice
+from constants import MAX_TIME_ATTACK_TIME, MAX_TIME_ATTACK_LIVES
 
 # Suppress DeprecationWarning
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -13,6 +14,7 @@ class menuScreen(QDialog):
         super(menuScreen, self).__init__()
         loadUi("menuDialog.ui", self)
         self.srButton.clicked.connect(self.goToSingleRound)
+        self.taButton.clicked.connect(self.goToTimeAttack)
         self.hsButton.clicked.connect(self.goToHighscores)
 
     def goToSingleRound(self):
@@ -29,6 +31,12 @@ class menuScreen(QDialog):
         widget.addWidget(hsScreen)
         widget.setCurrentIndex(widget.currentIndex()+1)
 
+    def goToTimeAttack(self):
+        from time_round_window import timeRoundScreen
+        print("Lives", MAX_TIME_ATTACK_LIVES)
+        taScreen = timeRoundScreen(MAX_TIME_ATTACK_TIME, 1, MAX_TIME_ATTACK_LIVES, [])
+        widget.addWidget(taScreen)
+        widget.setCurrentIndex(widget.currentIndex()+1)
 
 
 

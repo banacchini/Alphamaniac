@@ -29,7 +29,7 @@ background-color:qlineargradient(spread:pad, x1:0.652, y1:0.75, x2:0.845771, y2:
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>20</x>
       <y>0</y>
       <width>480</width>
       <height>160</height>
@@ -44,7 +44,7 @@ color: black;</string>
      <string>Single Round</string>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="timer">
+   <widget class="QLCDNumber" name="timerDisplay">
     <property name="geometry">
      <rect>
       <x>950</x>
@@ -277,6 +277,25 @@ border-color:black;</string>
     </property>
     <property name="text">
      <string>Finish the round!</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>129</y>
+      <width>480</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;Gill Sans Ultra Bold Condensed&quot;;</string>
+    </property>
+    <property name="text">
+     <string>How fast can you do it?</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>

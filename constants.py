@@ -3,6 +3,11 @@
 import os
 import string
 
+#Game settings
+CATEGORIES_NUM = 5
+LETTERS = string.ascii_uppercase.replace("X", '')
+MAX_TIME_ATTACK_LIVES = 3
+
 # Timer settings
 MAX_SINGLE_ROUND_TIME = 60  # seconds
 MAX_TIME_ATTACK_TIME = 90  # seconds
@@ -23,5 +28,3 @@ DATA_FILES = {
 HIGH_SCORES_FILE = os.path.join(BASE_PATH, 'data', 'highscores.json')
 MAX_HIGH_SCORES = 5
 
-# Other constants
-LETTERS = string.ascii_uppercase

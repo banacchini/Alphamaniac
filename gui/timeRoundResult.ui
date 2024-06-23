@@ -26,7 +26,7 @@
     <string notr="true">QWidget#background{
 background-color:qlineargradient(spread:pad, x1:0.652, y1:0.75, x2:0.845771, y2:0.898, stop:0 rgba(255, 249, 254, 255), stop:1 rgba(255, 207, 158, 255));}</string>
    </property>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="mainLabel">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -41,7 +41,10 @@ background-color:qlineargradient(spread:pad, x1:0.652, y1:0.75, x2:0.845771, y2:
 color: black;</string>
     </property>
     <property name="text">
-     <string>Single Round</string>
+     <string>Time-Attack</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLCDNumber" name="timerDisplay">
@@ -295,7 +298,7 @@ background-color:white;
 border-color:black;</string>
     </property>
     <property name="text">
-     <string>GO BACK</string>
+     <string>Continue!</string>
     </property>
    </widget>
    <widget class="QPushButton" name="addCountryButton">
@@ -392,6 +395,82 @@ border-color:black;</string>
     </property>
     <property name="text">
      <string>Check your answers!</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>240</y>
+      <width>130</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;Gill Sans Ultra Bold Condensed&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Round:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>340</y>
+      <width>130</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;Gill Sans Ultra Bold Condensed&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Lives left:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="currentRoundDisplay">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>240</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 32pt &quot;Arial Rounded MT Bold&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="livesDisplay">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>340</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 32pt &quot;Arial Rounded MT Bold&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

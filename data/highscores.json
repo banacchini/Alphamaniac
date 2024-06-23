@@ -2,29 +2,55 @@
     "single_round": [
         {
             "letter": "L",
-            "correct": 5,
+            "score": 5,
             "time": 21
         },
         {
+            "letter": "E",
+            "score": 4,
+            "time": 18
+        },
+        {
             "letter": "C",
-            "correct": 3,
+            "score": 4,
+            "time": 47
+        },
+        {
+            "letter": "C",
+            "score": 3,
             "time": 22
         },
         {
             "letter": "M",
-            "correct": 3,
+            "score": 3,
+            "time": 32
+        }
+    ],
+    "time_attack": [
+        {
+            "letter": "L",
+            "score": 5,
+            "time": 21
+        },
+        {
+            "letter": "C",
+            "score": 4,
+            "time": 47
+        },
+        {
+            "letter": "M",
+            "score": 3,
             "time": 32
         },
         {
-            "letter": "I",
-            "correct": 2,
-            "time": 19
+            "letter": "C",
+            "score": 3,
+            "time": 22
         },
         {
-            "letter": "Q",
-            "correct": 2,
-            "time": 21
+            "letter": "F",
+            "score": 2,
+            "time": 107
         }
-    ],
-    "time_attach": []
+    ]
 }

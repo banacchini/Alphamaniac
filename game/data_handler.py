@@ -90,9 +90,16 @@ class DataHandler:
             print(f'An error occurred while saving high scores: {e}')
 
     def add_single_round_highscore(self, letter, correct, time):
-        self.high_scores['single_round'].append({'letter': letter, 'correct': correct, 'time': time})
-        self.high_scores['single_round'].sort(key=lambda x: (-x['correct'], x['time']))
+        self.high_scores['single_round'].append({'letter': letter, 'score': correct, 'time': time})
+        self.high_scores['single_round'].sort(key=lambda x: (-x['score'], x['time']))
         self.high_scores['single_round'] = self.high_scores['single_round'][:MAX_HIGH_SCORES]
+        self.save_high_scores()
+
+    def add_time_attack_highscore(self, letter, rounds, time_left):
+        print('here')
+        self.high_scores['time_attack'].append({'letter': letter, 'score': rounds, 'time': time_left})
+        self.high_scores['time_attack'].sort(key=lambda x: (-x['score'], -x['time']))
+        self.high_scores['time_attack'] = self.high_scores['time_attack'][:MAX_HIGH_SCORES]
         self.save_high_scores()
 
     def get_high_scores(self, mode):

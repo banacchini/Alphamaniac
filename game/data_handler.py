@@ -1,13 +1,36 @@
 import json
 import os
+import shutil
 from auxiliary.constants import DATA_FILES, HIGH_SCORES_FILE, MAX_HIGH_SCORES
+from utils import resource_path
+
+
+def reset_data():
+    backup_directory = 'backupData'
+    data_directory = 'data'
+
+    files_to_reset = [
+        'animals.json',
+        'cities.json',
+        'countries.json',
+        'occupations.json',
+        'sports.json'
+    ]
+
+    for file_name in files_to_reset:
+        src = os.path.join(resource_path(backup_directory), file_name)
+        dst = os.path.join(resource_path(data_directory), file_name)
+        try:
+            shutil.copy(src, dst)
+        except Exception as e:
+            print(f'Failed to reset {file_name}: {e}')
 
 
 class DataHandler:
     def __init__(self):
         # Initialize data handler with paths to data files and high scores
-        self.data_files = DATA_FILES
-        self.high_scores_file = HIGH_SCORES_FILE
+        self.data_files = {k: resource_path(v) for k, v in DATA_FILES.items()}
+        self.high_scores_file = resource_path(HIGH_SCORES_FILE)
         self.high_scores = self.load_highscores()
 
     def load_data_by_letter(self, category, letter):

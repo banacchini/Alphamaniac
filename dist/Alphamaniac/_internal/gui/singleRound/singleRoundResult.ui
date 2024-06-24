@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>menuUI</class>
+ <widget class="QDialog" name="menuUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="background" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#background{
+background-color:qlineargradient(spread:pad, x1:0.652, y1:0.75, x2:0.845771, y2:0.898, stop:0 rgba(255, 249, 254, 255), stop:1 rgba(255, 207, 158, 255));}</string>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>0</y>
+      <width>480</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 50pt &quot;Bauhaus 93&quot;;
+
+color: black;</string>
+    </property>
+    <property name="text">
+     <string>Single Round</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="timerDisplay">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>50</y>
+      <width>200</width>
+      <height>150</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>75</y>
+      <width>190</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;Gill Sans Ultra Bold Condensed&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Your Letter is:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="currentLetterDisplay">
+    <property name="geometry">
+     <rect>
+      <x>775</x>
+      <y>75</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 48pt &quot;Arial Rounded MT Bold&quot;;</string>
+    </property>
+    <property name="text">
+     <string>A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>250</y>
+      <width>180</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Gill Sans Ultra Bold Condensed&quot;;
+background-color:white;
+border-color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Country:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>330</y>
+      <width>180</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Gill Sans Ultra Bold Condensed&quot;;
+background-color:white;
+border-color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>City:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>410</y>
+      <width>171</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Gill Sans Ultra Bold Condensed&quot;;
+background-color:white;
+border-color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Occupation:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>580</y>
+      <width>180</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Gill Sans Ultra Bold Condensed&quot;;
+background-color:white;
+border-color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Sport:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>490</y>
+      <width>180</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Gill Sans Ultra Bold Condensed&quot;;
+background-color:white;
+border-color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Animal:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="countryInput">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>250</y>
+      <width>400</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-color: rgb(0, 0, 0);
+font: 75 20pt &quot;Gill Sans MT&quot;;
+background-color: rgb(0, 255, 0)</string>
+    </property>
+    <property name="text">
+     <string>Answer</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="cityInput">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>330</y>
+      <width>400</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;Gill Sans MT&quot;;
+color: rgb(0, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string>Answer</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="occupationInput">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>410</y>
+      <width>400</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;Gill Sans MT&quot;;
+background-color: rgb(255, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Answer</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="animalInput">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>490</y>
+      <width>400</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;Gill Sans MT&quot;;
+color: rgb(255, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Answer</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="sportInput">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>570</y>
+      <width>400</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;Gill Sans MT&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Answer</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="okButton">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>650</y>
+      <width>201</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Gill Sans Ultra Bold Condensed&quot;;
+border-radius:20px;
+background-color:white;
+border-color:black;</string>
+    </property>
+    <property name="text">
+     <string>GO BACK</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addCountryButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>250</y>
+      <width>200</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Gill Sans MT&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Add to the dictionary</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addCityButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>330</y>
+      <width>200</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Gill Sans MT&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Add to the dictionary</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addOccupationButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>410</y>
+      <width>200</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Gill Sans MT&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Add to the dictionary</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addAnimalButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>490</y>
+      <width>200</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Gill Sans MT&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Add to the dictionary</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addSportButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>570</y>
+      <width>200</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Gill Sans MT&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Add to the dictionary</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>129</y>
+      <width>480</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;Gill Sans Ultra Bold Condensed&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Check your answers!</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

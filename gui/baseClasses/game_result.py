@@ -49,7 +49,7 @@ class GameResult(QDialog):
         # Set text and color of the edit line based on the answer
         # example usage: setEditLineTextAndColor(self.cityInput, [London, True])
         # answer = [answer_text, bool_answer]
-        editLine.setText(answer[0])
+        editLine.setText(answer[0].title())
 
         if answer[1]:
             editLine.setStyleSheet(CORRECT_FONT)

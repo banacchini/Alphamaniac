@@ -2,12 +2,13 @@ from random import choice as rchoice
 from PyQt5.uic import loadUi
 from auxiliary.constants import LETTERS, TIME_ATTACK_INCREMENT
 from gui.baseClasses.game_round import GameRound
-
+from utils import resource_path
 
 class TimeRoundScreen(GameRound):
     def __init__(self, time, current_round, lives, used):
         super(TimeRoundScreen, self).__init__()
-        loadUi("gui/timeAttack/timeRoundDialog.ui", self)
+        ui_path = resource_path("gui/timeAttack/timeRoundDialog.ui")
+        loadUi(ui_path, self)
 
         # Initialize lives, time, current round, and select a random letter
         self.lives_left = lives

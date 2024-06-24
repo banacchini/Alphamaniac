@@ -1,14 +1,15 @@
 from PyQt5.uic import loadUi
 from auxiliary.constants import MAX_SINGLE_ROUND_TIME
 from gui.baseClasses.game_result import GameResult
-
+from utils import resource_path
 
 class SingleRoundResults(GameResult):
     def __init__(self, answers, letter, time_left):
         super(SingleRoundResults, self).__init__(answers, letter, time_left)
 
         # Load the UI for the single round results
-        loadUi("gui/singleRound/singleRoundResult.ui", self)
+        ui_path = resource_path("gui/singleRound/singleRoundResult.ui")
+        loadUi(ui_path, self)
 
         # Display the remaining time and the current letter
         self.timerDisplay.display(self.time_left)

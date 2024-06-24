@@ -2,6 +2,7 @@ from random import choice as rchoice
 from PyQt5.uic import loadUi
 from auxiliary.constants import MAX_SINGLE_ROUND_TIME, LETTERS
 from gui.baseClasses.game_round import GameRound
+from utils import resource_path
 
 
 class SingleRoundScreen(GameRound):
@@ -9,7 +10,8 @@ class SingleRoundScreen(GameRound):
         super(SingleRoundScreen, self).__init__()
 
         # Load the UI for the single round screen
-        loadUi("gui/singleRound/singleRoundDialog.ui", self)
+        ui_path = resource_path("gui/singleRound/singleRoundDialog.ui")
+        loadUi(ui_path, self)
 
         # Select a random letter and set the initial time left
         self.random_letter = rchoice(LETTERS)

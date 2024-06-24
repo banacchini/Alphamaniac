@@ -1,11 +1,14 @@
 from PyQt5.uic import loadUi
 from gui.baseClasses.game_result import GameResult
 from auxiliary.constants import CATEGORIES_NUM
+from utils import resource_path
+
 
 class TimeRoundResults(GameResult):
     def __init__(self, answers, letter, time_left, lives_left, current_round, used):
         super(TimeRoundResults, self).__init__(answers, letter, time_left)
-        loadUi("gui/timeAttack/timeRoundResult.ui", self)
+        ui_path = resource_path("gui/timeAttack/timeRoundResult.ui")
+        loadUi(ui_path, self)
 
         # Initialize round and used letters
         self.curr_round = current_round

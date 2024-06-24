@@ -10,7 +10,6 @@ class GameLogic:
     def load_data_for_letter(self, letter):
         # Load data for a given letter for all categories
         for category in self.data_handler.data_files.keys():
-            print("Loading data for ", letter, ", ", category)
             self.current_data[category] = self.data_handler.load_data_by_letter(category, letter)
 
     def check_answer(self, category, answer):
@@ -25,11 +24,8 @@ class GameLogic:
         # Check answers for all categories and return a dictionary with results
         ret_answers = {}
         self.load_data_for_letter(letter)
-        print("countries:", self.current_data['countries'])
-        print("animals", self.current_data['animals'])
         for category in answers.keys():
             ret_answers[category] = [answers[category], self.check_answer(category, answers[category])]
-            print(ret_answers[category])
         return ret_answers
 
     def count_correct(self, checked_answers):

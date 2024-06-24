@@ -1,32 +1,37 @@
 {
     "single_round": [
         {
+            "letter": "A",
+            "score": 10,
+            "time": 30
+        },
+        {
+            "letter": "A",
+            "score": 10,
+            "time": 30
+        },
+        {
+            "letter": "A",
+            "score": 10,
+            "time": 30
+        },
+        {
+            "letter": "A",
+            "score": 10,
+            "time": 30
+        },
+        {
             "letter": "L",
             "score": 5,
-            "time": 21
-        },
-        {
-            "letter": "E",
-            "score": 4,
-            "time": 18
-        },
-        {
-            "letter": "K",
-            "score": 4,
-            "time": 22
-        },
-        {
-            "letter": "C",
-            "score": 4,
-            "time": 47
-        },
-        {
-            "letter": "Z",
-            "score": 3,
             "time": 21
         }
     ],
     "time_attack": [
+        {
+            "letter": "B",
+            "score": 5,
+            "time": 60
+        },
         {
             "letter": "L",
             "score": 5,
@@ -46,11 +51,6 @@
             "letter": "C",
             "score": 3,
             "time": 22
-        },
-        {
-            "letter": "B",
-            "score": 2,
-            "time": 119
         }
     ]
 }

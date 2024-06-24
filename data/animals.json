@@ -319,7 +319,8 @@
         "fox",
         "frog",
         "frogletpolliwogtadpole",
-        "fledglingowlet"
+        "fledglingowlet",
+        "fret"
     ],
     "J": [
         "jenny",
@@ -467,5 +468,8 @@
         "oxseecattle",
         "owl",
         "oyster"
+    ],
+    "Y": [
+        "yak"
     ]
 }

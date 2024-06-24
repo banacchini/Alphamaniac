@@ -1,43 +1,37 @@
-# data_handler.py
-
 import json
 import os
-from gui.constants import DATA_FILES, HIGH_SCORES_FILE, MAX_HIGH_SCORES
+from auxiliary.constants import DATA_FILES, HIGH_SCORES_FILE, MAX_HIGH_SCORES
+
 
 class DataHandler:
     def __init__(self):
+        # Initialize data handler with paths to data files and high scores
         self.data_files = DATA_FILES
-        self.high_score_file = HIGH_SCORES_FILE
-        self.high_scores = self.load_high_scores()
+        self.high_scores_file = HIGH_SCORES_FILE
+        self.high_scores = self.load_highscores()
 
     def load_data_by_letter(self, category, letter):
+        # Load data for a given category and letter
         filename = self.data_files.get(category)
         if not filename:
-            print(f"Error: No data file for category {category}")
             return {}
 
-        print(f'Attempting to load data from {filename} for letter {letter}')
         try:
             with open(filename, 'r') as file:
-                print('File opened successfully')
                 data = json.load(file)
-                print('Data loaded successfully')
         except FileNotFoundError:
-            print(f'Error: File {filename} not found.')
             return {}
         except json.JSONDecodeError:
-            print(f'Error: File {filename} is not a valid JSON.')
             return {}
-        except Exception as e:
-            print(f'An unexpected error occurred: {e}')
+        except Exception:
             return {}
 
         return data.get(letter.upper(), [])
 
     def add_to_dictionary(self, text, category):
+        # Add a new entry to the specified category dictionary
         filename = self.data_files.get(category)
         if not filename:
-            print(f"Error: No data file for category {category}")
             return
 
         # Load the existing data
@@ -47,7 +41,6 @@ class DataHandler:
         except FileNotFoundError:
             data = {}
         except json.JSONDecodeError:
-            print(f'Error: File {filename} is not a valid JSON.')
             return
 
         # Get the first letter of the text
@@ -63,44 +56,49 @@ class DataHandler:
         try:
             with open(filename, 'w') as file:
                 json.dump(data, file, indent=4)
-            print(f'Successfully added {text} to {category}.json')
-        except Exception as e:
-            print(f'An error occurred while saving {filename}: {e}')
+        except Exception:
+            pass
 
-    def load_high_scores(self):
-        if os.path.exists(self.high_score_file):
+    def load_highscores(self):
+        # Load high scores from the high scores file
+        if os.path.exists(self.high_scores_file):
             try:
-                with open(self.high_score_file, 'r') as file:
+                with open(self.high_scores_file, 'r') as file:
                     return json.load(file)
             except json.JSONDecodeError:
-                print(f'Error: File {self.high_score_file} is not a valid JSON.')
                 return {}
-            except Exception as e:
-                print(f'An unexpected error occurred: {e}')
+            except Exception:
                 return {}
         else:
             return {"single_round": [], "time_attack": []}
 
-    def save_high_scores(self):
+    def save_highscores(self):
+        # Save high scores to the high scores file
         try:
-            with open(self.high_score_file, 'w') as file:
+            with open(self.high_scores_file, 'w') as file:
                 json.dump(self.high_scores, file, indent=4)
-            print('High scores saved successfully.')
-        except Exception as e:
-            print(f'An error occurred while saving high scores: {e}')
+        except Exception:
+            pass
 
     def add_single_round_highscore(self, letter, correct, time):
+        # Add a high score for a single round
         self.high_scores['single_round'].append({'letter': letter, 'score': correct, 'time': time})
         self.high_scores['single_round'].sort(key=lambda x: (-x['score'], x['time']))
         self.high_scores['single_round'] = self.high_scores['single_round'][:MAX_HIGH_SCORES]
-        self.save_high_scores()
+        self.save_highscores()
 
     def add_time_attack_highscore(self, letter, rounds, time_left):
-        print('here')
+        # Add a high score for a time attack round
         self.high_scores['time_attack'].append({'letter': letter, 'score': rounds, 'time': time_left})
         self.high_scores['time_attack'].sort(key=lambda x: (-x['score'], -x['time']))
         self.high_scores['time_attack'] = self.high_scores['time_attack'][:MAX_HIGH_SCORES]
-        self.save_high_scores()
+        self.save_highscores()
 
-    def get_high_scores(self, mode):
+    def get_highscores(self, mode):
+        # Get high scores for the specified mode
         return self.high_scores.get(mode, [])
+
+    def reset_highscores(self):
+        # Reset high scores for both single round and time attack
+        self.high_scores = {"single_round": [], "time_attack": []}
+        self.save_highscores()

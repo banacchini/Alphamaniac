@@ -2,7 +2,7 @@
 
 import json
 import os
-from constants import DATA_FILES, HIGH_SCORES_FILE, MAX_HIGH_SCORES
+from gui.constants import DATA_FILES, HIGH_SCORES_FILE, MAX_HIGH_SCORES
 
 class DataHandler:
     def __init__(self):

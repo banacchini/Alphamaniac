@@ -1,4 +1,3 @@
-from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QDialog
 from game.data_handler import DataHandler
 

@@ -2,7 +2,6 @@ from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QDialog, QLCDNumber
 
 from game.data_handler import DataHandler
-from game.game_logic import GameLogic
 
 
 class GameRound(QDialog):

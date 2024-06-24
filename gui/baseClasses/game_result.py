@@ -1,6 +1,6 @@
-from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QDialog
 from game.data_handler import DataHandler
+from game.game_logic import GameLogic
 
 class GameResult(QDialog):
     def __init__(self, answers, letter, time_left):
@@ -26,6 +26,7 @@ class GameResult(QDialog):
 
         self.okButton = None
         self.DH = DataHandler()
+        self.GL = GameLogic()
 
     def setAnswers(self, answers):
 

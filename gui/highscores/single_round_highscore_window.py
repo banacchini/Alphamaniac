@@ -1,10 +1,10 @@
 from PyQt5.uic import loadUi
-from highscore_table import highscoreTable
+from gui.baseClasses.highscore_table import highscoreTable
 
 class srHSScreen(highscoreTable):
     def __init__(self):
         super(srHSScreen, self).__init__()
-        loadUi("srHighscores.ui", self)
+        loadUi("highscores/srHighscores.ui", self)
 
         self.okButton.clicked.connect(self.goToMenu)
 

@@ -1,13 +1,8 @@
-import string
-import sys
 import warnings
 from random import choice as rchoice
 from PyQt5.uic import loadUi
-from PyQt5.QtWidgets import QDialog, QApplication, QStackedWidget, QLCDNumber
-from PyQt5.QtCore import QTimer
-from game.game_logic import GameLogic
-from constants import MAX_SINGLE_ROUND_TIME, LETTERS, TIME_ATTACK_INCREMENT, CATEGORIES_NUM
-from game_round import GameRound
+from gui.constants import LETTERS, TIME_ATTACK_INCREMENT
+from gui.baseClasses.game_round import GameRound
 
 # Suppress DeprecationWarning
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -15,8 +10,9 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 class timeRoundScreen(GameRound):
     def __init__(self, time, current_round, lives, used):
+        print("ROUND CRASH")
         super(timeRoundScreen, self).__init__()
-        loadUi("timeRoundDialog.ui", self)
+        loadUi("timeAttack/timeRoundDialog.ui", self)
 
         self.lives_left = lives
         self.time_left = time
@@ -41,15 +37,11 @@ class timeRoundScreen(GameRound):
         self.timer.stop()
 
         answers = self.get_answers()
-        print(answers)
-
-        GL = GameLogic()
-        answers = GL.check_answers(self.random_letter, answers)
 
         self.goToResults(answers, self.random_letter, self.time_left+TIME_ATTACK_INCREMENT, self.lives_left, self.curr_round, self.used)
 
     def goToResults(self, answers, letter, time_left, lives_left, current_round, used):
-        from time_round_result_window import timeRoundResults
+        from gui.timeAttack.time_round_result_window import timeRoundResults
 
         resScreen = timeRoundResults(answers, letter, time_left, lives_left, current_round, used)
 

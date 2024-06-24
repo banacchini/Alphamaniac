@@ -1,11 +1,11 @@
 from PyQt5.uic import loadUi
-from highscore_table import highscoreTable
+from gui.baseClasses.highscore_table import highscoreTable
 
 
 class taHSScreen(highscoreTable):
     def __init__(self):
         super(taHSScreen, self).__init__()
-        loadUi("taHighscores.ui", self)
+        loadUi("highscores/taHighscores.ui", self)
 
         self.okButton.clicked.connect(self.goToMenu)
 

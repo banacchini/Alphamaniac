@@ -1,4 +1,31 @@
 {
-    "single_round": [],
-    "time_attack": []
+    "single_round": [
+        {
+            "letter": "A",
+            "score": 4,
+            "time": 41
+        }
+    ],
+    "time_attack": [
+        {
+            "letter": "W",
+            "score": 3,
+            "time": 121
+        },
+        {
+            "letter": "W",
+            "score": 2,
+            "time": 129
+        },
+        {
+            "letter": "R",
+            "score": 2,
+            "time": 110
+        },
+        {
+            "letter": "I",
+            "score": 1,
+            "time": 118
+        }
+    ]
 }

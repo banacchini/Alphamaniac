@@ -125,3 +125,4 @@ class DataHandler:
         # Reset high scores for both single round and time attack
         self.high_scores = {"single_round": [], "time_attack": []}
         self.save_highscores()
+

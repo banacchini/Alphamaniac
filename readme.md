@@ -99,6 +99,20 @@ Alphamaniac/
 
 ### Installation
 
+#### For Fun
+
+1. Download the zip folder
+
+```
+https://drive.google.com/file/d/1njmRa4bmQOJUkfHtIfcSn3pL5qbhb0Kk/view?usp=sharing
+```
+
+2. Unzip it and open the exe file.
+
+3. Enjoy!
+
+#### Development
+
 1. Clone the repository
 
     ```bash
